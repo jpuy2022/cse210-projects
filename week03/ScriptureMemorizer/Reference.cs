@@ -6,7 +6,6 @@ public class Reference
     private int _endVerse;
     private bool _isRange;
 
-    // Single verse
     public Reference(string book, int chapter, int verse)
     {
         _book = book;
@@ -15,7 +14,7 @@ public class Reference
         _isRange = false;
     }
 
-    // Verse range
+    
     public Reference(string book, int chapter, int startVerse, int endVerse)
     {
         _book = book;
