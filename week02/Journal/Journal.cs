@@ -25,6 +25,33 @@ public class Journal
                 sw.WriteLine($"{e._date}||{e._prompt}||{e._entry}");
             }
         }
-        
+
+    }
+
+    public void LoadFromFile(string file)
+    {
+        if (!File.Exists(file))
+        {
+            Console.WriteLine($"Sorry, the file '{file}' does not exist.");
+        }
+        else
+        {
+             _entries.Clear();
+            string[] lines = System.IO.File.ReadAllLines(file);
+            foreach (string line in lines)
+            {
+                string[] parts = line.Split("||");
+                if(parts.Length == 3)
+                {
+                    Entry newEntry = new Entry();
+                    newEntry._date = parts[0];
+                    newEntry._prompt = parts[1];
+                    newEntry._entry = parts[2];
+
+                    _entries.Add(newEntry);
+                }
+            }
+        }
+       
     }
 }
