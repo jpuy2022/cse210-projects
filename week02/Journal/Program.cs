@@ -1,5 +1,9 @@
 using System;
 
+/*
+Added the LoadFromFile method to Journal.cs, which verifies the file's existence before attemting to read it.
+*/
+
 class Program
 {
     private static void Option1(Journal j, Prompts p)
